@@ -18,11 +18,13 @@ Put the real key in `.env`, then confirm only that it loads—do not print the k
 python -c 'from dotenv import load_dotenv; import os; load_dotenv(); assert os.getenv("FMP_API_KEY"); print("FMP key loaded")'
 ```
 
-Install the two R packages if the local check reports they are absent:
+Install the two R packages only if the local check reports they are absent. The following is a Terminal command; `Rscript -e` sends the quoted expression to R:
 
-```r
-install.packages(c("glmnet", "dplyr"))
+```bash
+Rscript -e 'install.packages(c("glmnet", "dplyr"), repos="https://cloud.r-project.org")'
 ```
+
+Do not paste bare `install.packages(...)` at a `%` or `$` shell prompt. That form works only after starting an interactive R session and seeing R's `>` prompt.
 
 ```bash
 make test

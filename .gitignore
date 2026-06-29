@@ -1,0 +1,25 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.Rhistory
+.RData
+
+.cache/
+.cache_enrich/
+
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/derived/*
+!data/derived/.gitkeep
+results/*
+!results/.gitkeep
+
+# Personal checking notes and small live-test outputs are local only.
+MY_LOCAL_CHECK_GUIDE.md
+MY_GITHUB_CODEX_GUIDE.md
+local_check/

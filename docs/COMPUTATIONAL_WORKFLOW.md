@@ -12,7 +12,7 @@ python -m pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Put the real key in `.env`, then confirm only that it loads—do not print the key:
+Put the real key in `.env`, then confirm only that it loads; do not print the key:
 
 ```bash
 python -c 'from dotenv import load_dotenv; import os; load_dotenv(); assert os.getenv("FMP_API_KEY"); print("FMP key loaded")'
@@ -32,7 +32,7 @@ make test
 
 Success means Python compilation, R dependency checks, and the offline event-window test all pass.
 
-## 2. Stage 1 — financial metrics
+## 2. Stage 1: financial metrics
 
 Use the frozen 503-symbol universe so a later run does not silently substitute the current S&P 500 membership.
 
@@ -59,7 +59,7 @@ python src/stage1/enrich_for_analysis.py \
   --concurrency 3
 ```
 
-## 3. Stage 2 — daily prices and event returns
+## 3. Stage 2: daily prices and event returns
 
 ```bash
 python src/stage2/sp500_daily_prices.py \

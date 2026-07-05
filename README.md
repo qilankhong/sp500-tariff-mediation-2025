@@ -29,7 +29,7 @@ Stock returns are calculated by adding up each day’s log return over the full 
 analysis/          Runs the mediation analysis and creates the result tables
 archive/original/  Stores the original source files and checksums used to verify them
 data/reference/    Contains the fixed list of 503 stock symbols used in the study
-docs/               Includes background information, variable definitions, and instructions for running the project
+docs/              Includes background information, variable definitions, and instructions to run the project
 scripts/           Contains the main scripts for running and checking the analysis
 src/stage1/        Builds the financial and company-characteristic variables
 src/stage2/        Collects stock-price data and calculates returns around each event

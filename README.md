@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the computational materials accompanying a research article on sector-level differences in S&P 500 stock returns during five tariff-policy episodes in 2025. The analysis examines direct sector effects and the role of firm-level financial characteristics as candidate mediators using a sparse generalized mediation framework.
+This repository contains the code and data used in a study of how S&P 500 sectors responded to five tariff-policy episodes in 2025. It looks at both sector-level return differences and whether firm financial characteristics may help explain those effects using a sparse generalized mediation approach.
 
 The repository is organized in the order the empirical analysis is performed:
 

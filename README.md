@@ -21,19 +21,19 @@ The repository is organized in the order the empirical analysis is performed:
 | S4 | Uncertainty-driven decline | 2025-04-09 to 2025-04-21 |
 | S5 | Long-term adjustment | 2025-02-19 to 2025-12-31 |
 
-Returns are calculated as sums of daily log returns for observations dated within each inclusive window. See [Variable definitions](docs/VARIABLES.md) for the boundary-date convention and mediator constructions.
+Stock returns are calculated by adding up each day’s log return over the full event window, including both the start and end dates. See [Variable definitions](docs/VARIABLES.md) for details on how the dates and mediator variables are defined.
 
 ## Repository contents
 
 ```text
-analysis/          generalized mediation analysis and result-table export
-archive/original/  unchanged historical source files and checksums
-data/reference/    frozen 503-symbol analysis universe
-docs/              study context, variables, and computational workflow
-scripts/           pipeline and validation entry points
-src/stage1/        financial-statement and firm-characteristic construction
-src/stage2/        adjusted-price collection and event-return construction
-tests/             offline validation tests
+analysis/          Runs the mediation analysis and creates the result tables
+archive/original/  Stores the original source files and checksums used to verify them
+data/reference/    Contains the fixed list of 503 stock symbols used in the study
+docs/               Includes background information, variable definitions, and instructions for running the project
+scripts/           Contains the main scripts for running and checking the analysis
+src/stage1/        Builds the financial and company-characteristic variables
+src/stage2/        Collects stock-price data and calculates returns around each event
+tests/             Contains offline tests used to check that the code works correctly
 ```
 
 The working pipeline implements only the five tariff-window outcomes. Earlier exploratory code is retained separately under `archive/original/` for provenance and is not part of the working analysis.

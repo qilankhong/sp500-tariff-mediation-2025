@@ -23,3 +23,6 @@ results/*
 MY_LOCAL_CHECK_GUIDE.md
 MY_GITHUB_CODEX_GUIDE.md
 local_check/
+
+# Unpublished manuscript drafts remain local and are not part of the code release.
+paper_writing/

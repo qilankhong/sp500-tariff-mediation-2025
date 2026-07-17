@@ -25,11 +25,15 @@ def make_event_returns(input_csv, output_csv):
 
 # =========================
 # Confirmed event windows
+#
+# Returns are close-to-close event-window returns. Because each daily return is
+# labeled by its ending date, a window from start_date to end_date includes
+# returns with start_date < date <= end_date.
 # =========================
 
 # 1. Initial tariff-driven decline
     s1_decline = (
-        df[(df["date"] >= "2025-02-19") & (df["date"] <= "2025-03-13")]
+        df[(df["date"] > "2025-02-19") & (df["date"] <= "2025-03-13")]
         .groupby("symbol")["log_return"]
         .sum()
         .rename("S1_Decline")
@@ -37,7 +41,7 @@ def make_event_returns(input_csv, output_csv):
 
 # 2. Escalation collapse
     s2_escalation = (
-    df[(df["date"] >= "2025-03-25") & (df["date"] <= "2025-04-08")]
+    df[(df["date"] > "2025-03-25") & (df["date"] <= "2025-04-08")]
     .groupby("symbol")["log_return"]
     .sum()
     .rename("S2_Escalation_Collapse")
@@ -45,7 +49,7 @@ def make_event_returns(input_csv, output_csv):
 
 # 3. Policy shock jump
     s3_jump = (
-    df[(df["date"] >= "2025-04-08") & (df["date"] <= "2025-04-09")]
+    df[(df["date"] > "2025-04-08") & (df["date"] <= "2025-04-09")]
     .groupby("symbol")["log_return"]
     .sum()
     .rename("S3_Policy_Shock_Jump")
@@ -53,7 +57,7 @@ def make_event_returns(input_csv, output_csv):
 
 # 4. Uncertainty-driven decline
     s4_uncertainty = (
-    df[(df["date"] >= "2025-04-09") & (df["date"] <= "2025-04-21")]
+    df[(df["date"] > "2025-04-09") & (df["date"] <= "2025-04-21")]
     .groupby("symbol")["log_return"]
     .sum()
     .rename("S4_Uncertainty_Decline")
@@ -61,7 +65,7 @@ def make_event_returns(input_csv, output_csv):
 
 # 5. Long-term adjustment
     s5_long_term = (
-    df[(df["date"] >= "2025-02-19") & (df["date"] <= "2025-12-31")]
+    df[(df["date"] > "2025-02-19") & (df["date"] <= "2025-12-31")]
     .groupby("symbol")["log_return"]
     .sum()
     .rename("S5_Long_Term_Adjustment")

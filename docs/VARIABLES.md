@@ -2,11 +2,11 @@
 
 ## Outcome variables
 
-Each scenario outcome is the sum of daily log returns, `log(adjClose_t / adjClose_t-1)`, within the inclusive date window for each firm.
+Each scenario outcome is the close-to-close sum of daily log returns, `log(adjClose_t / adjClose_t-1)`, for each firm.
 
-The filter applies to the date attached to each daily return. Therefore, a return dated on the start boundary measures the prior trading close to that boundary close. This faithfully documents the original code; confirm that convention against the paper's intended economic window before final analysis.
+The filter applies to the date attached to each daily return. Because a return dated on a given trading day measures the prior trading close to that day's close, the code includes return rows after the start boundary and through the end boundary: `start_date < date <= end_date`. Thus a February 19 to March 13 window measures the return from the February 19 close through the March 13 close.
 
-| Variable | Interpretation | Inclusive window |
+| Variable | Interpretation | Close-to-close window |
 |---|---|---|
 | `S1_Decline` | Initial tariff-driven decline | 2025-02-19 to 2025-03-13 |
 | `S2_Escalation_Collapse` | Escalation collapse | 2025-03-25 to 2025-04-08 |
@@ -14,7 +14,7 @@ The filter applies to the date attached to each daily return. Therefore, a retur
 | `S4_Uncertainty_Decline` | Uncertainty-driven decline | 2025-04-09 to 2025-04-21 |
 | `S5_Long_Term_Adjustment` | Long-term adjustment | 2025-02-19 to 2025-12-31 |
 
-Because adjacent windows share some boundary dates, the scenarios are separate analyses and should not be added together.
+Adjacent windows are separate analyses and should not be added together.
 
 ## Exposure
 

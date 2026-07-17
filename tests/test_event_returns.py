@@ -35,9 +35,9 @@ class EventReturnTests(unittest.TestCase):
 
             self.assertTrue(output_path.exists())
             self.assertEqual(list(result.index), ["AAA", "BBB"])
-            self.assertAlmostEqual(result.loc["AAA", "S1_Decline"], 2 * np.log(1.1))
-            self.assertAlmostEqual(result.loc["AAA", "S3_Policy_Shock_Jump"], 2 * np.log(1.1))
-            self.assertAlmostEqual(result.loc["AAA", "S5_Long_Term_Adjustment"], 7 * np.log(1.1))
+            self.assertAlmostEqual(result.loc["AAA", "S1_Decline"], 1 * np.log(1.1))
+            self.assertAlmostEqual(result.loc["AAA", "S3_Policy_Shock_Jump"], 1 * np.log(1.1))
+            self.assertAlmostEqual(result.loc["AAA", "S5_Long_Term_Adjustment"], 6 * np.log(1.1))
             pd.testing.assert_series_equal(result.loc["AAA"], result.loc["BBB"], check_names=False)
 
     def test_missing_required_column_is_rejected(self):

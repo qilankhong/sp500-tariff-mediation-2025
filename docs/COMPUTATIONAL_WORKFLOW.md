@@ -110,7 +110,7 @@ Record these checks in the paper's computational appendix:
 3. FMP plan and endpoint-access status, but never the key.
 4. Row counts at each stage: expected universe 503; document any failed or delisted symbols.
 5. Missingness rates for every selected mediator.
-6. Exact event-window boundaries and whether boundary dates were trading days.
+6. Exact event-window boundaries, boundary-date convention, and whether boundary dates were trading days. The working event-return code uses close-to-close windows: `start_date < return date <= end_date`.
 7. A comparison of regenerated tables with the archived paper tables, allowing only explained data-revision or numerical-tolerance differences.
 
 For the long-term window, also inspect firms whose price histories end before 2025-12-31. The pipeline reports the available cumulative return; acquisition, delisting, or symbol-history treatment must be stated in the paper rather than silently inferred by the code.

@@ -1,5 +1,7 @@
 # Variables and event windows
 
+The complete machine-checkable variable dictionary is available in [`docs/Appendix_Variable_Dictionary.csv`](Appendix_Variable_Dictionary.csv).
+
 ## Outcome variables
 
 Each scenario outcome is the close-to-close sum of daily log returns, `log(adjClose_t / adjClose_t-1)`, for each firm.

@@ -29,12 +29,14 @@ Stock returns are calculated as close-to-close sums of daily log returns: for a 
 analysis/          Runs the mediation analysis and creates the result tables
 archive/original/  Stores the original source files and checksums used to verify them
 data/reference/    Contains the fixed list of 503 stock symbols used in the study
-docs/              Includes background information, variable definitions, and instructions to run the project
+docs/              Includes background information, variable definitions, the variable dictionary, and instructions to run the project
 scripts/           Contains the main scripts for running and checking the analysis
 src/stage1/        Builds the financial and company-characteristic variables
 src/stage2/        Collects stock-price data and calculates returns around each event
 tests/             Contains offline tests used to check that the code works correctly
 ```
+
+The complete variable dictionary is available at [docs/Appendix_Variable_Dictionary.csv](docs/Appendix_Variable_Dictionary.csv).
 
 The working pipeline implements only the five tariff-window outcomes. Earlier exploratory code is retained separately under `archive/original/` for provenance and is not part of the working analysis.
 

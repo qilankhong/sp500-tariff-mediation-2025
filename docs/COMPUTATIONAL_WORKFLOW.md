@@ -101,6 +101,34 @@ Valid scenario arguments are:
 
 Each run creates a timestamped folder under `results/` containing direct/indirect-effect and mediator-effect CSV tables.
 
+### Joint tests across all five scenarios
+
+Run the companion script once to test the complete direct- and indirect-effect
+vectors for every event window:
+
+```bash
+Rscript analysis/run_joint_hypothesis_tests.R \
+  data/processed/sp500_analysis_data.csv \
+  data/derived/event_returns.csv \
+  results/joint_hypothesis_tests_S1-S5.csv
+```
+
+The output reports the repository's joint Wald statistic for
+`H0: beta = 0` and its direct-effect F-type statistic for
+`H0: alpha1 = 0`. Their primary p-values use the asymptotic chi-square
+reference distribution with `q = 11` degrees of freedom, corresponding to the
+intercept plus the ten non-baseline sector indicators in `X`. The additional
+`Tn2` LRT-style and classical-F columns are labelled as sensitivity or
+descriptive calibrations; they are not substitutes for the primary tests.
+
+In the summary CSV, `Sample_Size_N` is the number of companies used in the
+analysis (503 in the supplied study data). `Joint_Test_DF_Q` is the dimension
+of each effect vector and therefore the degrees of freedom for the primary
+joint tests. Here `Q = 11`: one intercept representing the Utilities baseline
+plus ten indicators for the other sectors. The
+`Joint_Test_Coefficients` column records this composition directly in every
+row so that exported tables remain interpretable without consulting the code.
+
 ## 5. Validation record
 
 Record these checks in the paper's computational appendix:
